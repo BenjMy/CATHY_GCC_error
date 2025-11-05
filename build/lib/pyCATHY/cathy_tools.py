@@ -415,14 +415,11 @@ class CATHY:
             self.console.print(":white_check_mark: [green]pycppp successfully generated[/green]")
         else:
             self.console.print(":x: [red]pycppp was NOT generated — check Fortran compilation errors[/red]")
-
-
         src = Path(self.workdir) / self.project_name / "prepro/src/pycppp"
         dst = Path(self.workdir) / self.project_name / "prepro/pycppp"
 
         if dst.exists():
-            dst.unlink()  # Delete the existing destination fil
-        src.rename(dst)
+            dst.unlink()  # Delete the existing destination fil        src.rename(dst)
 
         self.console.print(":athletic_shoe: [b]Run preprocessor[/b]")
         os.chdir(os.path.join(self.workdir, self.project_name, "prepro"))
@@ -507,7 +504,7 @@ class CATHY:
         # clean all files previously compiled
         for file in glob.glob("*.o"):
             os.remove(file)
-        # list all the fortran files to compile
+        # list all the fortran files to compile 
         for file in glob.glob("*.f"):
 
             # filepath = Path(self.workdir) / self.project_name / 'src' / str(file)
